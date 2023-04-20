@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 
 @Entity
-@Table(name = "Sellers",schema ="public" )
+
 public class Seller extends Person{
     @Id
     @Getter

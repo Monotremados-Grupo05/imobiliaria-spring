@@ -4,8 +4,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 
 @Entity
-@Table(name = "Buyers",schema ="public" )
-public class Buyer extends Person {
+
+public class Buyer extends Person{
     @Id
     @Getter
     @GeneratedValue(strategy = GenerationType.AUTO)

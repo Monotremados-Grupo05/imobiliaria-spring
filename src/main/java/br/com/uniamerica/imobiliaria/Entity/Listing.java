@@ -12,10 +12,8 @@ public class Listing {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="id",nullable=false,unique=true)
     private long id;
-    @Getter
-    @Setter
-    @Column(name="postDescription",nullable=false,length = 200)
-    private String postDescription;
+
+
     @Getter
     @Setter
     @Column(name = "photoURLs",nullable = false,length = 100)

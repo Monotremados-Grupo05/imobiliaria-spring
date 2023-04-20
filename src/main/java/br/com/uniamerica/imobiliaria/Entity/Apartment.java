@@ -5,8 +5,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "Apartment", schema = "public")
-public class Apartment {
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+public class Apartment extends Building{
     @Id
     @Getter
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -14,11 +14,11 @@ public class Apartment {
     private long id;
     @Getter
     @Setter
-    @Column(name="floor",nullable=false)
+    @Column(name="floor")
     private int floor;
     @Getter
     @Setter
-    @Column(name = "name",nullable = false,length=30)
+    @Column(name = "name",length=30)
     private String name;
     @Getter
     @Setter
@@ -27,10 +27,10 @@ public class Apartment {
 
     @Getter
     @Setter
-    @Column(name = "interphone",nullable = false)
+    @Column(name = "interphone")
     private int interphone;
     @Getter
     @Setter
-    @Column(name = "parkings",nullable = false)
+    @Column(name = "parkings")
     private int parkings;
 }

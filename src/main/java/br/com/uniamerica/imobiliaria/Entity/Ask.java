@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalTime;
+
 @Entity
 @Table(name = "Asks", schema = "public")
 public class Ask {
@@ -19,11 +21,15 @@ public class Ask {
     @Getter
     @Setter
     @Column(name = "amount",nullable = false)
-
     private double amount;
     @Getter
     @Setter
     @Column(name = "discount",nullable = false)
-
     private double discount;
+    @Getter
+    @Setter
+    @Column(name = "time",nullable = false)
+    private LocalTime time;
+
+
 }
