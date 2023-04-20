@@ -18,8 +18,7 @@ public class Apartment {
     private int floor;
     @Getter
     @Setter
-    @Column(name = "name",nullable = false)
-
+    @Column(name = "name",nullable = false,length=30)
     private String name;
     @Getter
     @Setter
