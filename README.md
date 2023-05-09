@@ -2,7 +2,8 @@
 
 
 # Sobre o projeto:
-(Inserir logo ou alguma immagem sobre a imobiliaria)
+<img width="250" alt="image" src="https://github.com/Monotremados-Grupo05/imobiliaria-spring/assets/103599939/de5c6cda-a37f-430d-bb48-f2bd9fb7d6ee">
+
 
 
 Projeto Integrador de extensao para a faculdade Uniamerica onde iremos trabalhar criando um site para a Imobiliaria Quadros&Quadros.
