@@ -1,9 +1,10 @@
 # Imobiliaria Quadros&Quadros
 
-(Inserir logo ou alguma immagem sobre a imobiliaria) 
+
+# Sobre o projeto:
+(Inserir logo ou alguma immagem sobre a imobiliaria)
 
 
-Sobre o projeto:
 Projeto Integrador de extensao para a faculdade Uniamerica onde iremos trabalhar criando um site para a Imobiliaria Quadros&Quadros.
 Trabalhamos com HTML/CSS e JavaScript no Frontend do site e atualmente estamos trabalhando com Java e SQL para o desenvolvimento do Backend.
 
