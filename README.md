@@ -14,9 +14,10 @@ A imobiliaria Quadrosequadrosimoveis precisa de um sistema que mostre imoveis pa
 Ajustes e melhorias
 O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
 
- Adicionar os Controllers
+ Adicionar os Controllers 
  Adicionar as Services
  Adicionar logo ou imagem ao read.me
+ Melhorar esse read.me kkk ta tudo ficando descentralizado
  
  💻 Pré-requisitos
  O resultado sera um site completo entao para acessa-lo basta um navegador, ja temos a parte de HTML/CSS e futuramente iremos integrar a esse projeto
