@@ -10,8 +10,10 @@ public class AdminServise {
 
 
 public Admin cadastrar(Admin admin) {
+    return admin;
 }
 }
+
    // if (admin.getName().trim().isBlank() || )
 
 
