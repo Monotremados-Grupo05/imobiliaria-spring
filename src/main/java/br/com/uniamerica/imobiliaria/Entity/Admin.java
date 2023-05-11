@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
+
 @Entity
 
 public class Admin extends Person {
@@ -16,4 +18,6 @@ public class Admin extends Person {
     @Setter
     @Column(name="password",nullable=false,length=100)
     private String password;
+
+
 }

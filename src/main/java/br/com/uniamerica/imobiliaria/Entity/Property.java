@@ -43,6 +43,9 @@ public  abstract class Property {
     @Column(name="lastupdate",nullable=false)
     private LocalDateTime lastupdate;
 
+    @Getter @Setter
+    @Column(name="dtCadastro",nullable=false)
+    private LocalDateTime cadastro;
 
     @Getter @Setter
     @ManyToOne
