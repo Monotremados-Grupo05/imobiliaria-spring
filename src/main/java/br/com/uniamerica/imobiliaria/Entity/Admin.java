@@ -17,3 +17,4 @@ public class Admin extends Person {
     @Column(name="password",nullable=false,length=100)
     private String password;
 }
+

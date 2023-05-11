@@ -29,11 +29,9 @@ public  abstract class Property {
     @Getter @Setter
     @Column(name="posttitle",nullable=false,length = 100)
     private String posttitle;
-
     @Getter @Setter
     @Column(name="status",nullable=false)
     private LisitingStatus status;
-
     @Getter @Setter
     @ManyToOne
     @JoinColumn(name="sellagent",nullable=false)
