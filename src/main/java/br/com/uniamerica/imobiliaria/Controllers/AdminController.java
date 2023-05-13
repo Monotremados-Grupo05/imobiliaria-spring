@@ -30,9 +30,9 @@ public class AdminController {
                 : ResponseEntity.ok(listarid);
     }
     @PostMapping("/cadastrar")
-    public ResponseEntity<?> cadatrar(@RequestBody Admin admin){
+    public ResponseEntity<?> cadatrar(@RequestBody Admin cadastro){
         try{
-            this.Servise.cadastrar(admin);
+            this.Servise.cadastrar(cadastro);
             return ResponseEntity.ok("Cadastro bem sucedido");
         } catch (DataIntegrityViolationException e){
             return ResponseEntity.badRequest().body("Esse adm ja exixte");

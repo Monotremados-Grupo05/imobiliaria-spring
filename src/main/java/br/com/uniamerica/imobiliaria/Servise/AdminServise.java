@@ -1,5 +1,4 @@
 package br.com.uniamerica.imobiliaria.Servise;
-
 import br.com.uniamerica.imobiliaria.Entity.Admin;
 import org.springframework.stereotype.Service;
 import java.util.List;
