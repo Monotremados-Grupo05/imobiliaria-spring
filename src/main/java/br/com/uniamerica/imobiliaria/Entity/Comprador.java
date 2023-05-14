@@ -2,14 +2,13 @@ package br.com.uniamerica.imobiliaria.Entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
+
 @Entity
-@Table(name = "Terrenos", schema = "public")
-public class Terreno extends Property{
+
+public class Buyer extends Pessoa {
     @Id
     @Getter
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="id",nullable=false,unique=true)
     private long id;
-
-
 }

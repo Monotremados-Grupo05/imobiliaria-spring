@@ -5,7 +5,7 @@ import lombok.Getter;
 
 @Entity
 
-public class Seller extends Person{
+public class Seller extends Pessoa {
     @Id
     @Getter
     @GeneratedValue(strategy = GenerationType.AUTO)

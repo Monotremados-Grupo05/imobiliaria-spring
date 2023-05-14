@@ -21,17 +21,17 @@ public class Operation {
     @Setter
     @ManyToOne
     @JoinColumn(name = "PreviousOwner",nullable = false)
-    private Owner PreviousOwner;
+    private Proprietario PreviousOwner;
     @Getter
     @Setter
     @ManyToOne
     @JoinColumn(name = "NewOwner",nullable = false)
-    private Buyer NewOwner;
+    private Comprador NewOwner;
     @Getter
     @Setter
     @ManyToOne
     @JoinColumn(name = "sellAgent",nullable = false)
-    private Seller sellAgent;
+    private Vendedor sellAgent;
 
 
     @Getter
@@ -44,7 +44,7 @@ public class Operation {
     @Setter
     @Column(name = "contract",nullable = false)
 
-    private Contract contract;
+    private Contrato contract;
 
 
 

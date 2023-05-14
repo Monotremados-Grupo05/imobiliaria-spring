@@ -6,7 +6,7 @@ import lombok.Setter;
 
 @Entity
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
-public class Building extends Property{
+public class Building extends Propriedade {
     @Id
     @Getter
     @GeneratedValue(strategy = GenerationType.AUTO)
