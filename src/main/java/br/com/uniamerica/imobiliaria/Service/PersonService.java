@@ -1,8 +1,8 @@
-package br.com.uniamerica.imobiliaria.Servise;
+package br.com.uniamerica.imobiliaria.Service;
 
 import br.com.uniamerica.imobiliaria.Entity.Person;
 
-public class PersonServise {
+public class PersonService {
 
     public Person cadastrar(Person person){
 

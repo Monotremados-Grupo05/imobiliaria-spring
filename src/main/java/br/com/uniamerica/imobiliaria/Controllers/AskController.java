@@ -1,13 +1,11 @@
 package br.com.uniamerica.imobiliaria.Controllers;
 
-import br.com.uniamerica.imobiliaria.Entity.Apartment;
 import br.com.uniamerica.imobiliaria.Entity.Ask;
-import br.com.uniamerica.imobiliaria.Servise.AskServise;
+import br.com.uniamerica.imobiliaria.Service.AskService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.*;
 import br.com.uniamerica.imobiliaria.Repository.AskRepository;
 @Controller
@@ -17,7 +15,7 @@ public class AskController {
     private AskRepository repository;
 
     @Autowired
-    private AskServise Servise;
+    private AskService Servise;
 
     @GetMapping("/lista/id/{id}")
     public ResponseEntity<?> listarId(@PathVariable(value = "id")Long id){

@@ -2,10 +2,8 @@ package br.com.uniamerica.imobiliaria.Controllers;
 
 import br.com.uniamerica.imobiliaria.Entity.Person;
 import br.com.uniamerica.imobiliaria.Entity.Seller;
-import br.com.uniamerica.imobiliaria.Repository.PersonRepository;
 import br.com.uniamerica.imobiliaria.Repository.SellerRepository;
-import br.com.uniamerica.imobiliaria.Servise.PersonServise;
-import br.com.uniamerica.imobiliaria.Servise.SellerServise;
+import br.com.uniamerica.imobiliaria.Service.SellerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.ResponseEntity;
@@ -16,9 +14,9 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping(value = "/api/seller")
 public class SellerController {
     @Autowired
-    SellerRepository repository;
+    private SellerRepository repository;
     @Autowired
-    SellerServise service;
+    private SellerService service;
 
     @GetMapping("/lista/id/{id}")
     public ResponseEntity<?> listarId(@PathVariable(value = "id")Long id){

@@ -2,7 +2,7 @@ package br.com.uniamerica.imobiliaria.Controllers;
 
 import br.com.uniamerica.imobiliaria.Entity.Admin;
 import br.com.uniamerica.imobiliaria.Repository.AdminRepository;
-import br.com.uniamerica.imobiliaria.Servise.AdminServise;
+import br.com.uniamerica.imobiliaria.Service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.ResponseEntity;
@@ -15,7 +15,7 @@ import java.util.List;
 public class AdminController {
 
     @Autowired
-    private AdminServise Servise;
+    private AdminService Service;
 
     @Autowired
     private AdminRepository Repository;
@@ -32,7 +32,7 @@ public class AdminController {
     @PostMapping("/cadastrar")
     public ResponseEntity<?> cadatrar(@RequestBody Admin cadastro){
         try{
-            this.Servise.cadastrar(cadastro);
+            this.Service.cadastrar(cadastro);
             return ResponseEntity.ok("Cadastro bem sucedido");
         } catch (DataIntegrityViolationException e){
             return ResponseEntity.badRequest().body("Esse adm ja exixte");

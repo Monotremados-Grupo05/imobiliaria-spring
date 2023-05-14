@@ -2,7 +2,7 @@ package br.com.uniamerica.imobiliaria.Controllers;
 
 import br.com.uniamerica.imobiliaria.Entity.Person;
 import br.com.uniamerica.imobiliaria.Repository.PersonRepository;
-import br.com.uniamerica.imobiliaria.Servise.PersonServise;
+import br.com.uniamerica.imobiliaria.Service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.ResponseEntity;
@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping(value = "/api/person")
 public class PersonController {
     @Autowired
-    PersonRepository repository;
+    private PersonRepository repository;
     @Autowired
-    PersonServise service;
+    private PersonService service;
 
     @GetMapping("/lista/id/{id}")
     public ResponseEntity<?> listarId(@PathVariable(value = "id")Long id){

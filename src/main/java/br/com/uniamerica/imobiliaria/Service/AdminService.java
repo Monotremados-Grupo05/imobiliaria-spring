@@ -1,10 +1,9 @@
-package br.com.uniamerica.imobiliaria.Servise;
+package br.com.uniamerica.imobiliaria.Service;
 import br.com.uniamerica.imobiliaria.Entity.Admin;
 import org.springframework.stereotype.Service;
-import java.util.List;
-//import br.com.uniamerica.imobiliaria.repository.AdminRepository;
+
 @Service
-public class AdminServise {
+public class AdminService {
 
 
 
