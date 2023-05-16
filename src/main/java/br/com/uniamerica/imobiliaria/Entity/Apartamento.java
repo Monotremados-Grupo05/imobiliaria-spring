@@ -3,34 +3,25 @@ package br.com.uniamerica.imobiliaria.Entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.envers.AuditTable;
+import org.hibernate.envers.Audited;
 
 @Entity
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
-public class Apartment extends Building{
-    @Id
-    @Getter
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="id",nullable=false,unique=true)
-    private long id;
-    @Getter
-    @Setter
-    @Column(name="floor")
-    private int floor;
-    @Getter
-    @Setter
-    @Column(name = "name",length=30)
-    private String name;
-    @Getter
-    @Setter
-    @Column(name = "price",nullable = false)
-    private double price;
-
-    @Getter
-    @Setter
-    @Column(name = "interphone")
+@Table(name = "apartamento",schema = "public")
+@Audited
+@AuditTable(value = "apartamento_audit", schema = "audit")
+public class Apartamento extends AbstractEntity {
+    @Getter @Setter
+    @Column(name="andar",nullable=false)
+    private int andar;
+    @Getter @Setter
+    @Column(name = "nome",nullable=false,length=30)
+    private String nome;
+    @Getter @Setter
+    @Column(name = "interphone",nullable=false)
     private int interphone;
     @Getter
     @Setter
-    @Column(name = "parkings")
-    private int parkings;
+    @Column(name = "estacionamento",nullable=false)
+    private int estacionamento;
 }

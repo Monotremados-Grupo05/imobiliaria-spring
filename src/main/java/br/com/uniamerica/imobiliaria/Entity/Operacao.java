@@ -3,48 +3,48 @@ package br.com.uniamerica.imobiliaria.Entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.envers.AuditTable;
+import org.hibernate.envers.Audited;
 
 import java.time.LocalDateTime;
 
+
 @Entity
-@Table(name = "Operations", schema = "public")
-public class Operation {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="id",nullable=false,unique = true)
-    private long id;
+@Table(name = "operacao",schema = "public")
+@Audited
+@AuditTable(value = "operacao_audit", schema = "audit")
+public class Operacao extends AbstractEntity {
+    @Getter @Setter
+    @Column(name = "contrato",nullable = false)
+    private Contrato contrato;
+    @Getter
+    @Setter
+    @ManyToOne
+    @JoinColumn(name = "comprador_id",nullable = false)
+    private Comprador comprador;
     @Getter @Setter
     @OneToOne
-    @JoinColumn(name = "price",nullable = false)
-    private Ask price;
+    @JoinColumn(name = "proprietario_id", nullable = false)
+    private Proprietario proprietario;
     @Getter
     @Setter
     @ManyToOne
-    @JoinColumn(name = "PreviousOwner",nullable = false)
-    private Proprietario PreviousOwner;
-    @Getter
-    @Setter
+    @JoinColumn(name = "vendedor_id",nullable = false)
+    private Vendedor vendedor;
+    @Getter @Setter
+    @Column(name = "contrato_venda",nullable = false)
+    private String contratoVenda;
+    @Getter @Setter
     @ManyToOne
-    @JoinColumn(name = "NewOwner",nullable = false)
-    private Comprador NewOwner;
-    @Getter
-    @Setter
-    @ManyToOne
-    @JoinColumn(name = "sellAgent",nullable = false)
-    private Vendedor sellAgent;
-
-
-    @Getter
-    @Setter
-    @Column(name = "operationDate",nullable = false)
-
-    private LocalDateTime operationDate;
-
-    @Getter
-    @Setter
-    @Column(name = "contract",nullable = false)
-
-    private Contrato contract;
+    @JoinColumn(name = "descricao_venda",nullable = false)
+    private Descricao descricaoVenda;
+    @Getter @Setter
+    @OneToOne
+    @JoinColumn(name = "propriedade",nullable = false)
+    private Propriedade propriedade;
+    @Getter @Setter
+    @Column(name = "valor",nullable = false)
+    private Double valor;
 
 
 

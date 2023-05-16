@@ -1,6 +1,6 @@
 package br.com.uniamerica.imobiliaria.Entity;
 
-public enum LisitingStatus {
+public enum Status {
 
     Venda("Vendido"),
     Listado("Listado"),
@@ -8,7 +8,7 @@ public enum LisitingStatus {
    Alugado("Alugado");
     private String type;
 
-    LisitingStatus(String type) {
+    Status(String type) {
         this.type = type;
     }
 
