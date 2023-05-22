@@ -1,5 +1,6 @@
 package br.com.uniamerica.imobiliaria.Servise;
 
+import br.com.uniamerica.imobiliaria.Entity.Admin;
 import br.com.uniamerica.imobiliaria.Entity.Owner;
 import br.com.uniamerica.imobiliaria.Entity.Seller;
 import br.com.uniamerica.imobiliaria.Repository.OwnerRepository;
@@ -17,7 +18,7 @@ public class SellerServise {
     private SellerRepository sellerRepository;
 
 
-    public List<Seller> seller(){
+    public List<Seller> listar(){
 
         return sellerRepository.findAll();
     }
@@ -55,11 +56,8 @@ public class SellerServise {
             throw new RuntimeException();
         }
     }
-
-
-
-
-
+    public List<Seller> listaSellerAtivos(){
+        return this.sellerRepository.SellerAtivos();}
 
 
 }

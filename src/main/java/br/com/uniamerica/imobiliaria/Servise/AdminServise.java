@@ -50,7 +50,9 @@ public class AdminServise {
         }
     }
 
-
+    public List<Admin> listaAdminAtivos(){
+        return this.adminRepository.AdminAtivos();
+    }
 
 }
 

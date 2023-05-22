@@ -1,7 +1,9 @@
 package br.com.uniamerica.imobiliaria.Servise;
 
+import br.com.uniamerica.imobiliaria.Entity.Admin;
 import br.com.uniamerica.imobiliaria.Entity.Buyer;
 import br.com.uniamerica.imobiliaria.Entity.Owner;
+import br.com.uniamerica.imobiliaria.Entity.Seller;
 import br.com.uniamerica.imobiliaria.Repository.BuyerRepository;
 import br.com.uniamerica.imobiliaria.Repository.OwnerRepository;
 import jakarta.transaction.Transactional;
@@ -16,12 +18,10 @@ public class OwnerServise {
     private OwnerRepository ownerRepository;
 
 
-    public List<Owner> owner(){
+    public List<Owner> listar(){
 
         return ownerRepository.findAll();
     }
-
-
 
     public Owner cadastrar(Owner owner) {
         if (owner.getName().trim().isEmpty()) {
@@ -54,5 +54,6 @@ public class OwnerServise {
             throw new RuntimeException();
         }
     }
-
+    public List<Owner> listaOwnerAtivos(){
+        return this.ownerRepository.OwnerAtivos();}
 }
