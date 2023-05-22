@@ -10,5 +10,5 @@ public class Buyer extends Person{
     @Getter
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="id",nullable=false,unique=true)
-    private long id;
+    private Long id;
 }
