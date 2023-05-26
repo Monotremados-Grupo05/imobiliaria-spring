@@ -27,7 +27,9 @@ public abstract class AbstractEntity {
     private void prePersist(){
         this.cadastro = LocalDateTime.now();
         this.ativo = true;
+
     }
+
     @PreUpdate
     private void preUpdate(){
         this.edicao = LocalDateTime.now();

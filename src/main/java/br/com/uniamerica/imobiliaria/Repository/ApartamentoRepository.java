@@ -4,7 +4,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import br.com.uniamerica.imobiliaria.Entity.Apartamento;
 
+import java.util.List;
+
 @Repository
-public interface ApartmentRepository extends JpaRepository<Apartamento, Long> {
+public interface ApartamentoRepository extends JpaRepository<Apartamento, Long> {
+    List<Apartamento> findByAtivo(boolean ativo);
 }
 
