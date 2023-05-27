@@ -44,9 +44,9 @@ public class Propriedade extends AbstractEntity{
     @Column(name="titulo",nullable=false)
     private String titulo;
     @Getter @Setter
-    @OneToMany
-    @JoinColumn(name="tipo",nullable=false)
-    private List<Construcao> tipo;
+    @OneToOne
+    @JoinColumn(name="construcao",nullable=false)
+    private Construcao construcao;
 }
 
 

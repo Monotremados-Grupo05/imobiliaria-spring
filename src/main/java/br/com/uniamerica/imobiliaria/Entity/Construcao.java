@@ -11,6 +11,10 @@ import org.hibernate.envers.Audited;
 @Audited
 @AuditTable(value = "construcao_audit", schema = "audit")
 public class Construcao extends AbstractEntity {
+    @Enumerated(EnumType.STRING)
+    @Getter @Setter
+    @Column(name = "tipo", length = 20, nullable = false)
+    private Tipo tipo;
     @Getter @Setter
     @Column(name="quartos",nullable=false)
     private int quartos;
@@ -27,4 +31,5 @@ public class Construcao extends AbstractEntity {
     @OneToOne
     @JoinColumn(name="apartamento",nullable=false)
     private Apartamento apartamento;
+
 }
