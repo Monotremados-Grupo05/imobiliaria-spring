@@ -9,5 +9,5 @@ import java.util.List;
 
 @Repository
 public interface ConstrucaoRepository extends JpaRepository<Construcao, Long> {
-    List<Apartamento> findByAtivo(boolean ativo);
+    List<Construcao> findByAtivo(boolean ativo);
 }
