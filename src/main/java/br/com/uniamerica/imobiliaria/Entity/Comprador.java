@@ -2,6 +2,7 @@ package br.com.uniamerica.imobiliaria.Entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.envers.AuditTable;
 import org.hibernate.envers.Audited;
 
@@ -11,6 +12,7 @@ import org.hibernate.envers.Audited;
 @AuditTable(value = "comprador_audit", schema = "audit")
 public class Comprador extends AbstractEntity {
     @Getter
+    @Setter
     @Column(name="documento",nullable=false)
     private String documento;
 }
