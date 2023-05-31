@@ -28,5 +28,6 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 • PgAdmin
 
 <div align="center">
-<img width="650" alt="image" src="https://github.com/Monotremados-Grupo05/imobiliaria-spring/assets/103599939/0c92a758-92e9-4aaa-b010-354383f4d895">
+<img width="650" alt="image" src="https://github.com/Monotremados-Grupo05/imobiliaria-spring/assets/103599939/71616481-c326-4b43-89db-3ba38ca7f9e0">
  </div>
+
