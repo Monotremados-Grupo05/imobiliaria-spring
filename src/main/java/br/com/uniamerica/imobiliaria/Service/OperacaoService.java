@@ -2,6 +2,7 @@ package br.com.uniamerica.imobiliaria.Service;
 
 import br.com.uniamerica.imobiliaria.Entity.Operacao;
 import br.com.uniamerica.imobiliaria.Repository.OperacaoRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,16 +29,31 @@ public class OperacaoService {
         return operacao;
     }
 ///////////////////////////////////GET ATIVOS OPERACAO///////////////////////////////////
-  /*  public List<Operacao> ativosOperacao(){
+    public List<Operacao> ativosOperacao(){
         List<Operacao> operacao = operacaoRepository.findByAtivo(true);
         return operacao;
     }
 ///////////////////////////////////POST OPERACAO///////////////////////////////////
     @Transactional(rollbackOn = Exception.class)
     public void cadastrarOperacao(final Operacao operacao){
-        if(operacao.getDocumento() == null){
-            throw new RuntimeException("O Documento nao pode ser nulo, verifique e tente novamente");
-        } else{
+        if(operacao.getContrato()==null){
+            throw new RuntimeException("Contrato nulo, verifique e tente novamente");
+        }else if(operacao.getComprador() == null){
+            throw new RuntimeException("Comprador nulo, verifique e tente novamente");
+        }else if(operacao.getProprietario()==null){
+            throw new RuntimeException("Proprietario nulo, verifique e tente novamente");
+        }else if(operacao.getVendedor()==null){
+            throw new RuntimeException("Vendedor nulo, verifique e tente novamente");
+        }else if(operacao.getContratoVenda()==null){
+            throw new RuntimeException("Cotrato da venda nulo, verifique e tente novamente");
+        }else if(operacao.getDescricaoVenda()==null){
+            throw new RuntimeException("Descricao nula, verifique e tente novamente");
+        }else if(operacao.getPropriedade()==null){
+            throw new RuntimeException("Propriedade nulo, verifique e tente novamente");
+        }else if(operacao.getValor()==null){
+            throw new RuntimeException("Valor nulo, verifique e tente novamente");
+        }
+        else{
             operacaoRepository.save(operacao);
         }
     }
@@ -47,9 +63,17 @@ public class OperacaoService {
         if (operacaoExistente == null) {
             return null;
         } else {
-            operacaoExistente.setDocumento(operacaoAtualizado.getDocumento());
+            operacaoExistente.setContrato(operacaoAtualizado.getContrato());
+            operacaoExistente.setComprador(operacaoAtualizado.getComprador());
+            operacaoExistente.setProprietario(operacaoAtualizado.getProprietario());
+            operacaoExistente.setVendedor(operacaoAtualizado.getVendedor());
+            operacaoExistente.setContrato(operacaoAtualizado.getContrato());
+            operacaoExistente.setContratoVenda(operacaoAtualizado.getContratoVenda());
+            operacaoExistente.setDescricaoVenda(operacaoAtualizado.getDescricaoVenda());
+            operacaoExistente.setPropriedade(operacaoAtualizado.getPropriedade());
+            operacaoExistente.setValor(operacaoAtualizado.getValor());
             return operacaoRepository.save(operacaoExistente);
         }
 
-    }*/
+    }
 }
