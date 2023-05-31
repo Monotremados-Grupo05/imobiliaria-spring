@@ -26,3 +26,7 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 • IntelliJ IDEA ou qualquer IDEA que tenha suporte para JAVA
 • PostgreSQL
 • PgAdmin
+
+<div align="center">
+<img width="650" alt="image" src="https://github.com/Monotremados-Grupo05/imobiliaria-spring/assets/103599939/0c92a758-92e9-4aaa-b010-354383f4d895">
+ </div>

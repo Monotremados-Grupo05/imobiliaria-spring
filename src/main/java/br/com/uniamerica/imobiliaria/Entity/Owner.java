@@ -2,13 +2,17 @@ package br.com.uniamerica.imobiliaria.Entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.Setter;
+import org.hibernate.envers.AuditTable;
+import org.hibernate.envers.Audited;
 
 @Entity
-
-public class Owner extends Person{
-    @Id
+@Table(name = "Owner",schema = "public")
+@Audited
+@AuditTable(value = "   Owner_audit", schema = "audit")
+public class Owner extends Pessoa {
+    @Setter
     @Getter
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="id",nullable=false,unique=true)
-    private Long id;
+    @Column(name="documento",nullable=false)
+    private String documento;
 }
