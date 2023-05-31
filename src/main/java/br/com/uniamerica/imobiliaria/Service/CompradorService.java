@@ -4,10 +4,7 @@ import br.com.uniamerica.imobiliaria.Entity.Comprador;
 import br.com.uniamerica.imobiliaria.Repository.CompradorRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 import java.util.Optional;

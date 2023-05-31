@@ -28,9 +28,9 @@ public class CompradorController {
         }
     }
 
-    ///////////////////////////////////GET LISTA COMPRADORES///////////////////////////////////
+///////////////////////////////////GET LISTA COMPRADORES///////////////////////////////////
     @GetMapping({"/lista"})
-    public ResponseEntity<?> ListaCondutor() {
+    public ResponseEntity<?> ListaComprador() {
         return ResponseEntity.ok(compradorService.listaComprador());
     }
 
@@ -45,7 +45,7 @@ public class CompradorController {
     public ResponseEntity<?> cadastrarCompador(@RequestBody final Comprador comprador) {
         try {
             this.compradorService.cadastrarComprador(comprador);
-            return ResponseEntity.ok("Condutor cadastrado");
+            return ResponseEntity.ok("Comprador cadastrado");
         } catch (Exception e) {
             return ResponseEntity.badRequest().body("Erro: " + e.getMessage());
         }
@@ -55,8 +55,8 @@ public class CompradorController {
     public ResponseEntity<?> atualizarComprador(@PathVariable final @NotNull Long id, @RequestBody final Comprador comprador) {
         Optional<Comprador> compradorExistente = compradorRepository.findById(id);
         if (compradorExistente.isPresent()) {
-            Comprador condutorAtualizado = compradorExistente.get();
-            compradorService.atualizarComprador(condutorAtualizado.getId(), comprador);
+            Comprador compradorAtualizado = compradorExistente.get();
+            compradorService.atualizarComprador(compradorAtualizado.getId(), comprador);
             return ResponseEntity.ok().body("Registro atualizado com sucesso");
         } else {
             return ResponseEntity.badRequest().body("ID não encontrado");
@@ -72,11 +72,11 @@ public class CompradorController {
 
             if (comprador.isAtivo()) {
                 compradorRepository.delete(comprador);
-                return ResponseEntity.ok().body("O registro do condutor foi deletado com sucesso");
+                return ResponseEntity.ok().body("O registro do comprador foi deletado com sucesso");
             } else {
                 comprador.setAtivo(false);
                 compradorRepository.save(comprador);
-                return ResponseEntity.ok().body("O condutor estava vinculado a uma ou mais movimentações e foi desativado com sucesso");
+                return ResponseEntity.ok().body("O comprador estava vinculado a uma ou mais movimentações e foi desativado com sucesso");
             }
         } else {
             return ResponseEntity.notFound().build();
