@@ -18,7 +18,7 @@ public class OperacaoController {
     @Autowired
     private OperationRepository operationRepository;
 
-    ///////////////////////////////////GET ID OPERACAO///////////////////////////////////
+///////////////////////////////////GET ID OPERACAO///////////////////////////////////
     @GetMapping
     public ResponseEntity<?> idOperacao(@RequestParam("id") final Long id) {
         try {
@@ -70,11 +70,11 @@ public class OperacaoController {
 
             if (operacao.isAtivo()) {
                 operationRepository.delete(operacao);
-                return ResponseEntity.ok().body("O registro do comprador foi deletado com sucesso");
+                return ResponseEntity.ok().body("O registro da operacao foi deletada com sucesso");
             } else {
                 operacao.setAtivo(false);
                 operationRepository.save(operacao);
-                return ResponseEntity.ok().body("O comprador estava vinculado a uma ou mais movimentações e foi desativado com sucesso");
+                return ResponseEntity.ok().body("A operacao estava vinculado a uma ou mais movimentações e foi desativado com sucesso");
             }
         } else {
             return ResponseEntity.notFound().build();
