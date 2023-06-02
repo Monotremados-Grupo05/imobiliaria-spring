@@ -1,7 +1,6 @@
 package br.com.uniamerica.imobiliaria.Controllers;
 
 import br.com.uniamerica.imobiliaria.Entity.Descricao;
-import br.com.uniamerica.imobiliaria.Entity.Operacao;
 import br.com.uniamerica.imobiliaria.Repository.DescricaoRepository;
 import br.com.uniamerica.imobiliaria.Service.DescricaoService;
 import jakarta.validation.constraints.NotNull;
@@ -43,7 +42,7 @@ public class DescricaoController {
     public ResponseEntity<?> cadastrarDescricao(@RequestBody final Descricao descricao) {
         try {
             this.descricaoService.cadastrarDescricao(descricao);
-            return ResponseEntity.ok("Operacao cadastrada");
+            return ResponseEntity.ok("Descricao cadastrada");
         } catch (Exception e) {
             return ResponseEntity.badRequest().body("Erro: " + e.getMessage());
         }
@@ -70,11 +69,11 @@ public class DescricaoController {
 
             if (descricao.isAtivo()) {
                 descricaoRepository.delete(descricao);
-                return ResponseEntity.ok().body("O registro da operacao foi deletada com sucesso");
+                return ResponseEntity.ok().body("O registro da descricao foi deletado com sucesso");
             } else {
                 descricao.setAtivo(false);
                 descricaoRepository.save(descricao);
-                return ResponseEntity.ok().body("A operacao estava vinculado a uma ou mais movimentações e foi desativado com sucesso");
+                return ResponseEntity.ok().body("A descricao estava vinculado a uma ou mais movimentações e foi desativado com sucesso");
             }
         } else {
             return ResponseEntity.notFound().build();

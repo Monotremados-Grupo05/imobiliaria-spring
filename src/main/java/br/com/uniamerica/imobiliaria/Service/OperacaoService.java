@@ -1,6 +1,7 @@
 package br.com.uniamerica.imobiliaria.Service;
 
 import br.com.uniamerica.imobiliaria.Entity.Operacao;
+import br.com.uniamerica.imobiliaria.Repository.CompradorRepository;
 import br.com.uniamerica.imobiliaria.Repository.OperacaoRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,8 +13,10 @@ import java.util.Optional;
 @Service
 public class OperacaoService {
     @Autowired
-
     private OperacaoRepository operacaoRepository;
+    @Autowired
+    private CompradorRepository compradorRepository;
+
 ///////////////////////////////////GET ID OPERACAO///////////////////////////////////
     public Optional<Operacao> procurarOperacao(Long id){
         if (!operacaoRepository.ProcuraId(id) ){
@@ -40,8 +43,12 @@ public class OperacaoService {
             throw new RuntimeException("Contrato nulo, verifique e tente novamente");
         }else if(operacao.getComprador() == null){
             throw new RuntimeException("Comprador nulo, verifique e tente novamente");
+        }else if(!compradorRepository.ProcuraId(operacao.getComprador().getId())){
+            throw new RuntimeException("O Comprador nao existe no banco de dados.");
         }else if(operacao.getProprietario()==null){
             throw new RuntimeException("Proprietario nulo, verifique e tente novamente");
+        }else if(operacao.getVendedor()==null){
+            throw new RuntimeException("Vendedor nulo, verifique e tente novamente");
         }else if(operacao.getVendedor()==null){
             throw new RuntimeException("Vendedor nulo, verifique e tente novamente");
         }else if(operacao.getContratoVenda()==null){
