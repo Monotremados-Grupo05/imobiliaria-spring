@@ -1,6 +1,5 @@
 package br.com.uniamerica.imobiliaria.Controllers;
 
-import br.com.uniamerica.imobiliaria.Entity.Comprador;
 import br.com.uniamerica.imobiliaria.Entity.Operacao;
 import br.com.uniamerica.imobiliaria.Repository.OperationRepository;
 import br.com.uniamerica.imobiliaria.Service.OperacaoService;
