@@ -39,7 +39,18 @@ public class CompradorService {
     public void cadastrarComprador(final Comprador comprador){
         if(comprador.getDocumento() == null){
             throw new RuntimeException("O Documento nao pode ser nulo, verifique e tente novamente");
-        } else{
+        }else if(comprador.getEmail()==null){
+            throw new RuntimeException("Email nao pode ser nulo, verifique e tente novamente");
+        }else if(comprador.getNome()==null){
+            throw new RuntimeException("Nome nulo, verifique e tente novamente");
+        }else if(comprador.getCpf()==null || comprador.getCnpj()==null){
+            throw new RuntimeException("Insira um CPF ou um CNJP, verifique e tente novamente");
+        }else if (!comprador.getCpf().matches("[0-9]{3}[.][0-9]{3}[.][0-9]{3}[-][0-9]{2}")|| !comprador.getCnpj().matches("[0-9]{2}[.][0-9]{3}[.][0-9]{3}[/][0001-][0-9]{2}")) {
+            throw new RuntimeException("Insira um CPF ou um CNJP, verifique e tente novamente");
+        }else if(comprador.getPhone()==null){
+            throw new RuntimeException("Telefone nulo, verifique e tente novamente");
+        }
+        else{
             compradorRepository.save(comprador);
         }
     }

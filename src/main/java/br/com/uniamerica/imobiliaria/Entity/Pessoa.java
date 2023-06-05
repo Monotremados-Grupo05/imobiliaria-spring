@@ -17,8 +17,12 @@ public abstract class Pessoa extends AbstractEntity {
     private String nome;
     @Getter
     @Setter
-    @Column(name="cpfCnpj",nullable=false,length=20,unique = true)
-    private String cpfCnpj;
+    @Column(name="cpf",length=20,unique = true)
+    private String cpf;
+    @Getter
+    @Setter
+    @Column(name="cnpj",length=20,unique = true)
+    private String cnpj;
     @Getter
     @Setter
     @Column(name="phone",nullable=false,length=10,unique = true)
