@@ -47,6 +47,10 @@ public class Propriedade extends AbstractEntity{
     @OneToOne
     @JoinColumn(name="construcao",nullable=false)
     private Construcao construcao;
+
+    @Getter @Setter
+    @Column(name = "valor",nullable = false)
+    private Double valor;
 }
 
 

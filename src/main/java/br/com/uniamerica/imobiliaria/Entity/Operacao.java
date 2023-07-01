@@ -42,9 +42,7 @@ public class Operacao extends AbstractEntity {
     @OneToOne
     @JoinColumn(name = "propriedade",nullable = false)
     private Propriedade propriedade;
-    @Getter @Setter
-    @Column(name = "valor",nullable = false)
-    private Double valor;
+
 
 
 
