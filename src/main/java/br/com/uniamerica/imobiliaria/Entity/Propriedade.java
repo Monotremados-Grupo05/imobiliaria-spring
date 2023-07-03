@@ -38,8 +38,8 @@ public class Propriedade extends AbstractEntity{
     @JoinColumn(name="descricao",nullable=false)
     private Descricao descricao;
     @Getter @Setter
-    @Column(name="staus",nullable=false)
-    private Status staus;
+    @Column(name="status")
+    private Status status;
     @Getter @Setter
     @Column(name="titulo",nullable=false)
     private String titulo;
