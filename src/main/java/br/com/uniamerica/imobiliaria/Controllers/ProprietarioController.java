@@ -1,47 +1,44 @@
 package br.com.uniamerica.imobiliaria.Controllers;
 
-import br.com.uniamerica.imobiliaria.Entity.Localizacao;
-import br.com.uniamerica.imobiliaria.Entity.Propriedade;
-import br.com.uniamerica.imobiliaria.Repository.LocalizacaoRepository;
-import br.com.uniamerica.imobiliaria.Repository.PropriedadeRepository;
-import br.com.uniamerica.imobiliaria.Service.LocalizacaoService;
-import br.com.uniamerica.imobiliaria.Service.PropriedadeService;
+import br.com.uniamerica.imobiliaria.Entity.Proprietario;
+import br.com.uniamerica.imobiliaria.Repository.ProprietarioRepository;
+import br.com.uniamerica.imobiliaria.Service.ProprietarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
 
-@Controller
-@RequestMapping(value = ("/api/propriedade"))
-public class PropriedadeController {
+@RestController
+@RequestMapping(value = "/api/proprietario")
+public class ProprietarioController {
+
     @Autowired
-    private PropriedadeService Service;
+    private ProprietarioService Service;
     @Autowired
-    private PropriedadeRepository Repository;
+    private ProprietarioRepository Repository;
     @GetMapping("/lista")
-    public ResponseEntity<List<Propriedade>> lista(){
-        List<Propriedade> listartudo = Service.listartudo();
+    public ResponseEntity<List<Proprietario>> lista(){
+        List<Proprietario> listartudo = Service.listartudo();
         return ResponseEntity.ok(listartudo);
     }
     @GetMapping("/lista/id/{id}")
     public ResponseEntity<?> listaId(@PathVariable(value = "id") Long id){
-        Propriedade listarid = Repository.findById(id).orElse(null);
+        Proprietario listarid = Repository.findById(id).orElse(null);
         return listarid == null
                 ? ResponseEntity.badRequest().body(" <<ERRO>>: valor nao encontrado.")
                 : ResponseEntity.ok(listarid);
     }
     @GetMapping("/lista/ativo/{ativo}")
-    public ResponseEntity<List<Propriedade>> listaAtivo(@PathVariable boolean ativo) {
-        List<Propriedade> listarAtivo = Repository.findByAtivo(ativo);
+    public ResponseEntity<List<Proprietario>> listaAtivo(@PathVariable boolean ativo) {
+        List<Proprietario> listarAtivo = Repository.findByAtivo(ativo);
         return ResponseEntity.ok(listarAtivo);
     }
 
     @PostMapping("/cadastrar")
-    public ResponseEntity<?> cadastrar(@RequestBody Propriedade cadastro){
+    public ResponseEntity<?> cadastrar(@RequestBody Proprietario cadastro){
         try{
             this.Service.cadastrar(cadastro);
             return ResponseEntity.ok("Cadastro feito com sucesso");
@@ -56,7 +53,7 @@ public class PropriedadeController {
 
     @DeleteMapping("/delete/id/{id}")
     public ResponseEntity<String> delete(@PathVariable Long id){
-        Optional<Propriedade> deletarId = Repository.findById(id);
+        Optional<Proprietario> deletarId = Repository.findById(id);
         if (deletarId.isPresent()) {
             Repository.deleteById(id);
             return ResponseEntity.ok("Apagado com sucesso");
@@ -65,7 +62,7 @@ public class PropriedadeController {
         }
     }
     @PutMapping("/put/id/{id}")
-    public ResponseEntity<?> atualizar( @PathVariable Long id, @RequestBody Propriedade atualizarId) {
+    public ResponseEntity<?> atualizar( @PathVariable Long id, @RequestBody Proprietario atualizarId) {
         try {
             this.Service.atualizar(id, atualizarId);
             return ResponseEntity.ok().body(" atualizado com sucesso!");

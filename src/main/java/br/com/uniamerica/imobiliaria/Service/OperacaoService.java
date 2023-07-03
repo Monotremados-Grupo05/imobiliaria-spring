@@ -57,8 +57,6 @@ public class OperacaoService {
             throw new RuntimeException("Descricao nula, verifique e tente novamente");
         }else if(operacao.getPropriedade()==null){
             throw new RuntimeException("Propriedade nulo, verifique e tente novamente");
-        }else if(operacao.getValor()==null){
-            throw new RuntimeException("Valor nulo, verifique e tente novamente");
         }
         else{
             operacaoRepository.save(operacao);
@@ -78,7 +76,7 @@ public class OperacaoService {
             operacaoExistente.setContratoVenda(operacaoAtualizado.getContratoVenda());
             operacaoExistente.setDescricaoVenda(operacaoAtualizado.getDescricaoVenda());
             operacaoExistente.setPropriedade(operacaoAtualizado.getPropriedade());
-            operacaoExistente.setValor(operacaoAtualizado.getValor());
+
             return operacaoRepository.save(operacaoExistente);
         }
 
