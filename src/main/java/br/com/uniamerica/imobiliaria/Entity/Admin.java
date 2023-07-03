@@ -8,8 +8,6 @@ import org.hibernate.envers.Audited;
 
 @Entity
 @Table(name = "admin",schema = "public")
-@Audited
-@AuditTable(value = "adminAudit", schema = "audit")
 public class Admin extends Pessoa {
     @Getter
     @Setter

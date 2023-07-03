@@ -12,8 +12,6 @@ import java.util.List;
 
 @Entity
 @Table(name = "propriedade",schema = "public")
-@Audited
-@AuditTable(value = "propriedade_audit", schema = "audit")
 public class Propriedade extends AbstractEntity{
     @Getter @Setter
     @OneToOne

@@ -11,7 +11,7 @@ import java.util.List;
 public interface DescricaoRepository extends JpaRepository<Descricao, Long> {
 List<Descricao> findByAtivo(boolean ativo);
 
-    @Query(value = "select exists (select * from operacao where id = :id)", nativeQuery = true)
+    @Query(value = "select exists (select * from descricao where id = :id)", nativeQuery = true)
     boolean ProcuraId(@Param("id") final Long id);
 }
 

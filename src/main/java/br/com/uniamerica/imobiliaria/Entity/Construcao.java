@@ -8,8 +8,6 @@ import org.hibernate.envers.Audited;
 
 @Entity
 @Table(name = "construcao",schema = "public")
-@Audited
-@AuditTable(value = "construcao_audit", schema = "audit")
 public class Construcao extends AbstractEntity {
     @Enumerated(EnumType.STRING)
     @Getter @Setter

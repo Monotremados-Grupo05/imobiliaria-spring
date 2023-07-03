@@ -6,7 +6,5 @@ import org.hibernate.envers.Audited;
 
 @Entity
 @Table(name = "vendedor",schema = "public")
-@Audited
-@AuditTable(value = "vendedor_audit", schema = "audit")
 public class Vendedor extends Pessoa {
 }

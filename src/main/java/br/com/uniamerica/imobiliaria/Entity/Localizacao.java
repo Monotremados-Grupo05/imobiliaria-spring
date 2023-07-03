@@ -7,8 +7,6 @@ import org.hibernate.envers.AuditTable;
 import org.hibernate.envers.Audited;
 @Entity
 @Table(name = "localizacao",schema = "public")
-@Audited
-@AuditTable(value = "localizacao_audit", schema = "audit")
 public class Localizacao extends AbstractEntity {
     @Getter @Setter
     @Column(name="cep",nullable=false,length = 100)
